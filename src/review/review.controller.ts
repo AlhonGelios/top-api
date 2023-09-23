@@ -24,7 +24,6 @@ export class ReviewController {
 	@UsePipes(new ValidationPipe())
 	@Post('create')
 	async create(@Body() dto: CreateReviewDto) {
-		console.log('hello world');
 		return this.reviewSevice.create(dto);
 	}
 
