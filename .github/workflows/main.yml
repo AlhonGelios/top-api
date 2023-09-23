@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    rubs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     step:
       - uses: actions/checkout@master
       - name: Publish to registry
