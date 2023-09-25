@@ -38,9 +38,15 @@ export class SitemapController {
 		const pages = await this.topPageService.findAll();
 		res = res.concat(
 			pages.map((page) => {
+				let updatedAt: Date = new Date();
+
+				if (page.updatedAt && typeof page.updatedAt != 'boolean') {
+					updatedAt = new Date(page.updatedAt);
+				}
+
 				return {
 					loc: `${this.domain}${CATEGORY_URL[page.firstCategory]}/${page.alias}`,
-					lastmod: format(new Date(page.updatedAt ?? new Date()), fomatString),
+					lastmod: format(updatedAt, fomatString),
 					changefreq: 'weekly',
 					priority: '0.7',
 				};
