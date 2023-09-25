@@ -15,9 +15,9 @@ import {
 import { FindTopPageDto } from './dto/find-top-page.dto';
 import { TopPageService } from './top-page.service';
 import { CreateTopPageDto } from './dto/create-top-page.dto';
-import { IdValidationPipe } from 'src/pipes/ad-validation.pipe';
+import { IdValidationPipe } from '../pipes/ad-validation.pipe';
 import { NOT_FOUND_TOP_PAGE } from './top-page.constants';
-import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 
 @Controller('top-page')
 export class TopPageController {

@@ -1,7 +1,7 @@
 import { Controller, Get, Header } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { subDays, format } from 'date-fns';
-import { TopPageService } from 'src/top-page/top-page.service';
+import { TopPageService } from '../top-page/top-page.service';
 import { Builder } from 'xml2js';
 import { CATEGORY_URL } from './sitemap.constants';
 
@@ -19,7 +19,7 @@ export class SitemapController {
 	@Get('xml')
 	@Header('content-type', 'text/xml')
 	async sitemap() {
-		const fomatString = 'yyyy-MM-dd"T"HH:mm:00.00xxx';
+		const fomatString = "yyyy-MM-dd'T'HH:mm:00.00xxx";
 		let res = [
 			{
 				loc: this.domain,
@@ -52,9 +52,11 @@ export class SitemapController {
 				};
 			}),
 		);
+
 		const builder = new Builder({
 			xmldec: { version: '1.0', encoding: 'UTF-8' },
 		});
+
 		return builder.buildObject({
 			urlset: {
 				$: {
