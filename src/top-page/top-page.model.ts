@@ -23,6 +23,9 @@ export class HhData {
 
 	@Prop()
 	seniorSalary: number;
+
+	@Prop()
+	updatedAt: Date;
 }
 export const HhDataSchema = SchemaFactory.createForClass(HhData);
 
