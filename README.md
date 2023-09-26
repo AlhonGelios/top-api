@@ -12,3 +12,6 @@
     #TELEGRAM
     TELEGRAM_TOKEN=
     CHAT_ID=
+
+    #HH
+    HH_TOKEN=''

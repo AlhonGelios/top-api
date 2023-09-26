@@ -11,6 +11,7 @@ import { SitemapModule } from './sitemap/sitemap.module';
 import { TelegramModule } from './telegram/telegram.module';
 import { getTelegramConfig } from './configs/telegram.config';
 import { HhModule } from './hh/hh.module';
+import { getHhConfig } from './configs/hh.config';
 
 @Module({
 	imports: [
@@ -31,7 +32,11 @@ import { HhModule } from './hh/hh.module';
 			inject: [ConfigService],
 			useFactory: getTelegramConfig,
 		}),
-		HhModule,
+		HhModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService],
+			useFactory: getHhConfig,
+		}),
 	],
 })
 export class AppModule {}
