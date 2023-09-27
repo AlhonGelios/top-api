@@ -1,9 +1,10 @@
-import { DynamicModule, Module, Provider } from '@nestjs/common';
+import { DynamicModule, Global, Module, Provider } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
 import { HhService } from './hh.service';
 import { IHhModuleAsyncOptions } from './hh.interface';
 import { HH_MODULE_OPTIONS } from './hh.constants';
 
+@Global()
 @Module({
 	imports: [HttpModule],
 })

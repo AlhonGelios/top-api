@@ -29,7 +29,7 @@ export class HhService {
 					},
 					headers: {
 						'User-Agent': 'top-it-prof/1.0',
-						Authorization: 'Bearer' + this.token,
+						Authorization: 'Bearer ' + this.token,
 					},
 				})
 				.pipe(

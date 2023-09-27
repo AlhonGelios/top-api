@@ -3,7 +3,7 @@ import { TopPageController } from './top-page.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TopPageModel, TopPageSchema } from './top-page.model';
 import { TopPageService } from './top-page.service';
-import { HhModule } from 'src/hh/hh.module';
+import { HhModule } from '../hh/hh.module';
 
 @Module({
 	imports: [
@@ -12,5 +12,6 @@ import { HhModule } from 'src/hh/hh.module';
 	],
 	controllers: [TopPageController],
 	providers: [TopPageService],
+	exports: [TopPageService],
 })
 export class TopPageModule {}
