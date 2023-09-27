@@ -16,7 +16,7 @@ import { FindProductDto } from './dto/find-product.dto';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProductService } from './product.service';
 import { PRDUCT_NOT_FOUND_ERROR } from './product.constants';
-import { IdValidationPipe } from '../pipes/ad-validation.pipe';
+import { IdValidationPipe } from '../pipes/id-validation.pipe';
 import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 
 @Controller('product')

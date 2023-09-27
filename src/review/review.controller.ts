@@ -15,7 +15,7 @@ import { CreateReviewDto } from './dto/create-review.dto';
 import { ReviewService } from './review.service';
 import { REVIEW_NOT_FOUND } from './review.constants';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
-import { IdValidationPipe } from '../pipes/ad-validation.pipe';
+import { IdValidationPipe } from '../pipes/id-validation.pipe';
 import { TelegramService } from 'src/telegram/telegram.service';
 
 @Controller('review')
