@@ -12,9 +12,11 @@ import { TelegramModule } from './telegram/telegram.module';
 import { getTelegramConfig } from './configs/telegram.config';
 import { HhModule } from './hh/hh.module';
 import { getHhConfig } from './configs/hh.config';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
 	imports: [
+		ScheduleModule.forRoot(),
 		ConfigModule.forRoot(),
 		MongooseModule.forRootAsync({
 			imports: [ConfigModule],
