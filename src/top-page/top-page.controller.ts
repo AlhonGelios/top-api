@@ -97,9 +97,9 @@ export class TopPageController {
 		const data = await this.topPageService.findForHhUpdate(new Date());
 		for (const page of data) {
 			const hhData = await this.hhService.getData(page.category);
-			Logger.log('update hh');
 			page.hh = hhData;
 			await this.topPageService.updateById(page._id, page);
 		}
+		Logger.log('update hh');
 	}
 }
